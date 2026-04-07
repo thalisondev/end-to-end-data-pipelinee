@@ -114,3 +114,11 @@ ecommerce-data-pipeline/
 ##  Objetivo
 
 Simular um ambiente real de engenharia de dados, aplicando boas práticas de arquitetura, organização e automação de pipelines.
+## 🚀 Próximos Passos (Roadmap)
+
+Como este projeto tem o objetivo de criar uma fundação sólida em engenharia de dados, algumas evoluções já estão mapeadas para aproximar a arquitetura de um ambiente corporativo de larga escala:
+
+* **Orquestração Avançada:** Substituir a biblioteca `schedule` por uma ferramenta de orquestração padrão de mercado, como **Apache Airflow** ou **Prefect**.
+* **Evolução do Data Warehouse:** Migrar o armazenamento do `SQLite` para um banco relacional mais robusto (como **PostgreSQL**) ou um Data Warehouse em nuvem (como **Google BigQuery** ou **Snowflake**).
+* **Testes e Qualidade de Dados:** Implementar testes automatizados (utilizando `pytest` ou `Great Expectations`) para garantir a integridade, evitar duplicidades e validar os dados entre as camadas Raw, Processed e Curated.
+* **Containerização:** Criar um `Dockerfile` e um `docker-compose.yml` para isolar o ambiente, garantindo que o projeto rode em qualquer máquina sem conflito de dependências.
