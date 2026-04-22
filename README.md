@@ -70,7 +70,7 @@ notes
  use airflow for orchestration
  add a dashboard
 
-other languages
+other languages:
 
 🇧🇷 Portuguese: README.pt-br.md
 
