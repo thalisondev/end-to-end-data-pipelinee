@@ -16,7 +16,7 @@ Ele coleta dados de diferentes fontes (CSV e API), processa e armazena tudo de f
 
 ---
 
-## estrutura
+## estrutura:
 
 
 data_pipeline/
