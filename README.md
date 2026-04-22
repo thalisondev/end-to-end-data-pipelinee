@@ -1,124 +1,79 @@
-# 🚀 Data Engineering Pipeline
+# End-to-End Data Pipeline
 
-Projeto focado em simular um ambiente real de engenharia de dados, com pipeline automatizado, arquitetura em camadas e integração com dados externos.
+A simple project to simulate how a real end-to-end data pipeline works.
 
-## Arquitetura
+It ingests data from different sources (CSV and API), processes it, and stores everything in a structured database. The goal here is not complexity, but clarity and control over the whole pipeline.
 
-O pipeline segue o modelo de camadas:
+---
 
-* **Raw**: dados brutos
-* **Processed**: dados tratados
-* **Curated**: dados prontos para análise
+## what this does
 
-Fluxo:
+- reads e-commerce data from CSV  
+- fetches crypto data from an API  
+- cleans and transforms the data  
+- stores everything in SQLite  
+- runs the pipeline automatically  
+- logs what’s happening  
 
-Raw → Processed → Curated → Data Warehouse
+---
 
-## Tecnologias
-
-* Python
-* Pandas
-* SQLite
-* Logging
-* Schedule
-* Requests (API)
-
-## Pipelines
-
-### Pipeline CSV
-
-1. Ingestão de dados CSV
-2. Transformação e limpeza
-3. Criação de métricas (total_value)
-4. Armazenamento em banco de dados
-5. Salvamento em camadas (processed e curated)
-
-### Pipeline com API
-
-Integração com API de criptomoedas (CoinGecko):
-
-1. Coleta de dados em tempo real
-2. Transformação dos dados
-3. Armazenamento em Data Warehouse
-4. Salvamento na camada curated
-
-## Automação
-
-O projeto possui um scheduler que executa o pipeline automaticamente em intervalos definidos.
+## structure
 
 
-## Análise de Dados
+data_pipeline/
+├── ingestion/
+├── processing/
+├── storage/
+├── utils/
+├── data/
+├── logs/
+├── main.py
 
-Inclui visualização de receita por produto, permitindo gerar insights a partir dos dados processados.
 
-## Instalação
+Nothing fancy. Each part does one job.
 
-Clone o repositório:
+---
 
-```bash
-git clone https://github.com/seu-usuario/ecommerce-data-pipeline.git
-cd ecommerce-data-pipeline
-```
+## quick start
 
-Instale as dependências:
+install dependencies:
 
 ```bash
 pip install -r requirements.txt
-```
 
-## Como executar
+run the pipeline:
 
-### Pipeline CSV
+python main.py
 
-```bash
-py pipeline.py
-```
+that’s it.
 
-### 🌐 Pipeline API
+how it works
+* data comes in (csv + api)
+* gets cleaned and transformed
+* saved into sqlite
+* logs are generated
+* scheduler can run everything automatically
 
-```bash
-py pipeline_api.py
-```
+why i built this
 
-###  Automação
+to understand how data pipelines actually work in practice, not just in theory.
 
-```bash
-py -m orchestration.scheduler
-```
+most tutorials show isolated pieces. this connects everything end-to-end.
 
-## Estrutura do Projeto
+notes
+* simple by design
+* easy to modify
+* meant to be hacked and extended
+* next steps
+* move storage to postgres
+* add cloud (aws/gcp)
+* use airflow for orchestration
+* add a dashboard
 
-```
-ecommerce-data-pipeline/
- ├── ingestion/
- ├── transformation/
- ├── warehouse/
- ├── orchestration/
- ├── data/
- │    ├── raw/
- │    ├── processed/
- │    └── curated/
- ├── pipeline.py
- ├── pipeline_api.py
- ├── requirements.txt
- └── README.md
-```
+other languages
 
-##  Resultados
+🇧🇷 Portuguese: README.pt-br.md
 
-* Pipeline automatizado de dados
-* Integração com API externa (dados em tempo real)
-* Geração de métricas de negócio (receita total, produtos mais vendidos)
-* Persistência em múltiplas camadas de dados
+contact
 
-##  Objetivo
-
-Simular um ambiente real de engenharia de dados, aplicando boas práticas de arquitetura, organização e automação de pipelines.
-## 🚀 Próximos Passos (Roadmap)
-
-Como este projeto tem o objetivo de criar uma fundação sólida em engenharia de dados, algumas evoluções já estão mapeadas para aproximar a arquitetura de um ambiente corporativo de larga escala:
-
-* **Orquestração Avançada:** Substituir a biblioteca `schedule` por uma ferramenta de orquestração padrão de mercado, como **Apache Airflow** ou **Prefect**.
-* **Evolução do Data Warehouse:** Migrar o armazenamento do `SQLite` para um banco relacional mais robusto (como **PostgreSQL**) ou um Data Warehouse em nuvem (como **Google BigQuery** ou **Snowflake**).
-* **Testes e Qualidade de Dados:** Implementar testes automatizados (utilizando `pytest` ou `Great Expectations`) para garantir a integridade, evitar duplicidades e validar os dados entre as camadas Raw, Processed e Curated.
-* **Containerização:** Criar um `Dockerfile` e um `docker-compose.yml` para isolar o ambiente, garantindo que o projeto rode em qualquer máquina sem conflito de dependências.
+linkedin: www.linkedin.com/in/thalison-dev
