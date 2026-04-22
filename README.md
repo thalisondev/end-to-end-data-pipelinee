@@ -54,7 +54,7 @@ how it works
  logs are generated
  scheduler can run everything automatically
 
-why i built this
+## why i built this?
 
 to understand how data pipelines actually work in practice, not just in theory.
 
