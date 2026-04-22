@@ -46,7 +46,7 @@ python main.py
 ```
 é isso.
 
-como funciona
+## como funciona:
 os dados entram (csv + api)
 passam por limpeza e transformação
 são salvos no sqlite
