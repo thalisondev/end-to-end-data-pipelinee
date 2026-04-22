@@ -42,9 +42,9 @@ install dependencies:
 pip install -r requirements.txt
 ```
 run the pipeline:
-
-python main.py
-
+```bash
+  python main.py
+```
 that’s it.
 
 how it works
