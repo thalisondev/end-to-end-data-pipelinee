@@ -52,13 +52,13 @@ passam por limpeza e transformação
 são salvos no sqlite
 logs são gerados
 o scheduler pode rodar tudo automaticamente
-## por que eu fiz isso
+## por que eu fiz isso?
 
 para entender como pipelines de dados funcionam na prática, não só na teoria.
 
 a maioria dos conteúdos mostra partes isoladas. aqui a ideia foi conectar tudo de ponta a ponta.
 
-## observações
+## observações:
 
 simples de propósito
 fácil de modificar
@@ -67,7 +67,7 @@ próximos passos
 migrar para postgres
 adicionar cloud (aws/gcp)
 usar airflow para orquestração
-criar um dashboard
+criar um dashboard.
 
 contato:
 Linkedin: https://www.linkedin.com/in/thalison-dev
