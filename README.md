@@ -40,7 +40,7 @@ install dependencies:
 
 ```bash
 pip install -r requirements.txt
-
+```
 run the pipeline:
 
 python main.py
