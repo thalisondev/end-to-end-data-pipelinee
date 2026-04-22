@@ -76,4 +76,4 @@ other languages
 
 contact
 
-linkedin: www.linkedin.com/in/thalison-dev
+linkedin: https://www.linkedin.com/in/thalison-dev
