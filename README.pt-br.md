@@ -39,11 +39,11 @@ instalar dependências:
 
 ```bash
 pip install -r requirements.txt
-
+```
 rodar o pipeline:
-
+```bash
 python main.py
-
+```
 é isso.
 
 como funciona
@@ -69,5 +69,5 @@ adicionar cloud (aws/gcp)
 usar airflow para orquestração
 criar um dashboard
 
-contato
+contato:
 Linkedin: https://www.linkedin.com/in/thalison-dev
