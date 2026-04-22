@@ -20,13 +20,13 @@ Ele coleta dados de diferentes fontes (CSV e API), processa e armazena tudo de f
 
 
 data_pipeline/
-├── ingestion/
-├── processing/
-├── storage/
-├── utils/
-├── data/
-├── logs/
-├── main.py
+ingestion/
+processing/
+storage/
+utils/
+data/
+logs/
+main.py
 
 
 Nada muito complexo. Cada parte faz só o que precisa fazer.
@@ -59,6 +59,7 @@ para entender como pipelines de dados funcionam na prática, não só na teoria.
 a maioria dos conteúdos mostra partes isoladas. aqui a ideia foi conectar tudo de ponta a ponta.
 
 observações
+
 simples de propósito
 fácil de modificar
 feito para testar, aprender e evoluir
@@ -67,5 +68,6 @@ migrar para postgres
 adicionar cloud (aws/gcp)
 usar airflow para orquestração
 criar um dashboard
+
 contato
-Linkedin: www.linkedin.com/in/thalison-dev
+Linkedin: https://www.linkedin.com/in/thalison-dev
