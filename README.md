@@ -47,7 +47,7 @@ run the pipeline:
 ```
 that’s it.
 
-how it works
+## how it works:
  data comes in (csv + api)
  gets cleaned and transformed
  saved into sqlite
