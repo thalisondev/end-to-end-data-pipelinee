@@ -1,26 +1,16 @@
-import sqlite3
 import logging
+from sqlalchemy import create_engine, text
 
-def save_data(df):
-    conn = sqlite3.connect("data/warehouse.db")
+DB_URL = "postgresql://olist_user:olist_pass@localhost:5432/olist_db"
 
-    df.to_csv("data/curated/curated_sales.csv", index=False)
-    df.to_sql("sales_curated", conn, if_exists="replace", index=False)
+def get_engine():
+    return create_engine(DB_URL)
 
-    conn.close()
-
-    logging.info("Dados salvos na camada curated")
-
-def save_crypto(df):
-    if df is None:
-        logging.error("DataFrame vazio. Nada para salvar.")
-        return
-
-    conn = sqlite3.connect("data/warehouse.db")
-
-    df.to_csv("data/curated/crypto_data.csv", index=False)
-    df.to_sql("crypto_data", conn, if_exists="replace", index=False)
-
-    conn.close()
-
-    logging.info("Dados de crypto salvos com sucesso")
+def save_all_tables(dataframes):
+    engine = get_engine()
+    with engine.begin() as conn:
+        conn.execute(text("CREATE SCHEMA IF NOT EXISTS raw"))
+    
+    for name, df in dataframes.items():
+        df.to_sql(name, engine, schema="raw", if_exists="replace", index=False)
+        logging.info(f"✅ Tabela 'raw.{name}' salva no PostgreSQL")

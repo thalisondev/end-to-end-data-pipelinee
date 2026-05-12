@@ -13,7 +13,7 @@ def job():
     logging.info("⏰ Executando pipeline automaticamente...")
     run_pipeline()
 
-# agenda (a cada 10 segundos só pra teste)
+# agenda (a cada 10 segundos)
 schedule.every(10).seconds.do(job)
 
 logging.info("🚀 Scheduler iniciado...")

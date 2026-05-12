@@ -1,26 +1,20 @@
 import logging
+from ingestion.load_data import load_all_tables
+from warehouse.store import save_all_tables
 
-from ingestion.load_data import load_data
-from transformation.transform import transform_data
-from warehouse.store import save_data
-
-# configuração do log
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
 def run_pipeline():
-    logging.info("🚀 Iniciando pipeline")
+    logging.info("🚀 Iniciando pipeline Olist")
 
-    df = load_data("data/raw/raw_sales.csv")
-    logging.info("📥 Dados carregados")
+    dataframes = load_all_tables()
+    logging.info("📥 Todos os CSVs carregados")
 
-    df = transform_data(df)
-    logging.info("🔄 Dados transformados")
-
-    save_data(df)
-    logging.info("💾 Dados salvos no warehouse")
+    save_all_tables(dataframes)
+    logging.info("💾 Todos os dados salvos no PostgreSQL")
 
     logging.info("✅ Pipeline finalizado com sucesso!")
 
